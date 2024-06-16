@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document </title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">Конвертер валют</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="showPage('converter')">Преобразователь</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="showPage('rates')">Курсы валют</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div id="converter" class="container my-5">
+    <form id="converter-form">
+      <div class="form-group">
+        <label for="converter-input">Введите сумму и валюту (например, 15 usd in rub).</label>
+        <input type="text" id="converter-input" class="form-control">
+      </div>
+      <label for="converter-input">Результат:</label>
+      <div id="converter-result"></div>
+      <button type="submit" class="btn btn-primary btn-bottom">Перевести</button>
+    </form>
+  </div>
+  <div id="rates" class="container my-5" style="display: none;">
+    <div class="form-group">
+      <label for="base-currency">Базовая валюта:</label>
+      <select class="form-control" id="base-currency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+        <option value="JPY">JPY</option>
+        <option value="RUB">RUB</option>
+      </select>
+    </div>
+    <div id="exchange-rates"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
